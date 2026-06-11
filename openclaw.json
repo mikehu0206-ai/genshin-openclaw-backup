@@ -1,0 +1,137 @@
+{
+  "models": {
+    "providers": {
+      "kimi-coding": {
+        "apiKey": "sk-kimi-lR6k6JxQW2Tz9IPfeCd4hRoYyJb7se8qU32nMhiUH6gjIpz3HxSxX1jf2yhJ4eEu",
+        "baseUrl": "https://agent-gw.kimi.com/coding",
+        "api": "anthropic-messages",
+        "headers": {
+          "User-Agent": "Desktop Kimi Claw Plugin",
+          "X-Kimi-Claw-ID": "19ead23d-2df2-81d0-8000-0000c107aaad"
+        },
+        "models": [
+          {
+            "id": "k2p6",
+            "name": "k2p6",
+            "reasoning": true,
+            "contextWindow": 201072,
+            "maxTokens": 32768,
+            "headers": {
+              "User-Agent": "Desktop Kimi Claw Plugin",
+              "X-Kimi-Claw-ID": "19ead23d-2df2-81d0-8000-0000c107aaad"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "kimi-coding/k2p6"
+      },
+      "workspace": "/Users/hufujun/.kimi_openclaw/workspace",
+      "compaction": {
+        "mode": "default",
+        "memoryFlush": {
+          "enabled": false
+        }
+      },
+      "thinkingDefault": "high"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "kimi-search": {
+        "enabled": true
+      },
+      "kimi-claw": {
+        "enabled": true,
+        "config": {
+          "bridge": {
+            "mode": "acp",
+            "url": "wss://www.kimi.com/api-claw/bots/agent-ws",
+            "kimiapiHost": "https://www.kimi.com/api-claw",
+            "kimiFileDownloadDir": "/Users/hufujun/.kimi_openclaw/kimi/downloads",
+            "token": "km_b_prod_3wOA3u9n5vxvpY7Al9xv9kw2jN5U7hj6"
+          },
+          "gateway": {
+            "url": "ws://127.0.0.1:18679",
+            "token": "1cdd7d0b9759aa976131111e41a78ee8",
+            "agentId": "main"
+          },
+          "retry": {
+            "baseMs": 1000,
+            "maxMs": 600000,
+            "maxAttempts": 0
+          },
+          "log": {
+            "enabled": true
+          }
+        }
+      },
+      "openclaw-lark": {
+        "enabled": true
+      }
+    },
+    "allow": [
+      "kimi-claw",
+      "kimi-search",
+      "memory-core",
+      "openclaw-lark",
+      "imessage",
+      "telegram",
+      "qqbot",
+      "dingtalk-connector",
+      "wecom-openclaw-plugin",
+      "openclaw-weixin"
+    ]
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "1cdd7d0b9759aa976131111e41a78ee8"
+    },
+    "mode": "local",
+    "controlUi": {
+      "allowedOrigins": [
+        "null"
+      ]
+    }
+  },
+  "browser": {
+    "defaultProfile": "openclaw"
+  },
+  "channels": {
+    "imessage": {
+      "enabled": false
+    },
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_aa8c0528d1395bdf",
+      "appSecret": "fYqAmVkmilhhVHE2I0RVhdlV1czSLPK5",
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "requireMention": true,
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "ou_831ced0f793c87daef72d24f5b44dcdd"
+      ],
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "ou_831ced0f793c87daef72d24f5b44dcdd"
+      ],
+      "groups": {
+        "*": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "update": {
+    "checkOnStart": false
+  },
+  "tools": {
+    "profile": "full"
+  }
+}
